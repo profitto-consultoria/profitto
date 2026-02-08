@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profitto Consultoria Contábil - Soluções em contabilidade, planejamento fiscal e consultoria empresarial">
-    <meta name="keywords" content="contabilidade, consultoria fiscal, contabilidade empresarial, planejamento fiscal">
-    <title>Profitto Consultoria Contábil | Seus Experts em Contabilidade</title>
-    
+    <meta name="description" content="Profitto Consultoria Contábil - Soluções completas em contabilidade, consultoria fiscal e planejamento tributário para profissionais de saúde em Sergipe">
+    <meta name="keywords" content="contabilidade, consultoria fiscal, planejamento tributário, serviços em saúde, Sergipe, Aracaju">
+    <title>Profitto Consultoria Contábil | Referência em Contabilidade para Saúde em Sergipe</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #111E48;
+            --secondary: #AED5ED;
+            --light-bg: #f9fafb;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --accent: #0284c7;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--body-font);
             line-height: 1.6;
             color: #333;
+            background: #fff;
         }
 
-        /* Cores Profissionais */
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #f59e0b;
-            --light-bg: #f9fafb;
-            --text: #1f2937;
-            --text-light: #6b7280;
-        }
+        p { margin: 0 0 1rem; }
 
         /* Header/Navbar */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2855 100%);
             color: white;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
         nav {
@@ -47,52 +50,75 @@
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
+            gap: 1rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            height: 48px;
+            flex: 0 0 auto;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            cursor: pointer;
+            display: block;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
+            flex: 1 1 auto;
+            justify-content: flex-end;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.2s ease;
             cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
 
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
+        .nav-links a:hover { color: var(--secondary); }
 
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
+        .nav-button {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.6rem 1.25rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
             cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-family: var(--body-font);
         }
 
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: 0.3s;
+        .nav-button:hover {
+            background: #99c7e0;
+            transform: translateY(-1px);
         }
 
-        /* Hero Section */
+        .mobile-menu { display: none; flex-direction: column; cursor: pointer; }
+        .mobile-menu span { width: 25px; height: 3px; background: white; margin: 5px 0; transition: 0.3s; }
+
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            background:
+                linear-gradient(135deg, rgba(17,30,72,0.86) 0%, rgba(26,40,85,0.86) 100%),
+                url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2400&q=70") center/cover no-repeat;
             color: white;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem 5rem;
             text-align: center;
-            min-height: 500px;
+            min-height: 640px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -100,461 +126,733 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            font-family: var(--heading-font);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            opacity: 0.96;
+            max-width: 720px;
+            font-weight: 300;
         }
+
+        .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
         .cta-button {
             display: inline-block;
             background: var(--secondary);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
+            color: var(--primary);
+            padding: 1rem 2.25rem;
+            border-radius: 999px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: all 0.2s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            font-family: var(--body-font);
         }
 
         .cta-button:hover {
-            background: #d97706;
-            transform: translateY(-2px);
+            background: #99c7e0;
+            transform: translateY(-1px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* Container */
+        .cta-button-secondary {
+            background: rgba(255,255,255,0.95);
+            color: var(--primary);
+        }
+
+        .cta-button-secondary:hover { background: rgba(255,255,255,1); }
+
+        /* Métricas (4 em linha no desktop) */
+        .metrics {
+            align-self: stretch;
+            width: 100%;
+            max-width: 1100px;
+            margin: 3.5rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.25rem;
+            text-align: center;
+        }
+
+        .metric {
+            background: rgba(255,255,255,0.10);
+            padding: 1.25rem 1rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .metric h3 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+            font-family: var(--heading-font);
+            font-weight: 700;
+        }
+
+        .metric p {
+            font-size: 0.95rem;
+            opacity: 0.92;
+            margin-bottom: 0;
+        }
+
+        /* Layout geral */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-        }
+        section { padding: 4rem 0; }
 
         section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.4rem;
+            margin-bottom: 0.75rem;
             color: var(--primary);
             text-align: center;
+            font-weight: 700;
+            font-family: var(--heading-font);
+            letter-spacing: -0.2px;
         }
 
-        section p {
+        section > p {
             text-align: center;
-            color: var(--text-light);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            line-height: 1.75;
         }
 
-        /* Cards Grid */
+        /* Evita margens grandes dentro de caixas/cards */
+        .card p,
+        .team-card p,
+        .blog-content p,
+        .metric p { margin-bottom: 0; }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            padding: 2.25rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
             border-top: 4px solid var(--secondary);
+            overflow: hidden;
+            word-break: break-word;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
         .card h3 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            font-size: 1.25rem;
+            font-family: var(--heading-font);
         }
 
         .card p {
             text-align: left;
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
         }
 
-        .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-left: 4px solid var(--secondary);
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 1rem;
+        .card ul {
             text-align: left;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin: 1.25rem 0 0 1.25rem;
+            line-height: 1.9;
         }
 
-        .testimonial strong {
-            display: block;
+        .card li { margin-bottom: 0.4rem; }
+
+        /* Ícones sem emojis */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(174,213,237,0.35);
             color: var(--primary);
-            margin-top: 1rem;
-            text-align: left;
+            font-weight: 700;
+            font-family: var(--heading-font);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
         }
 
-        /* Blog Posts */
+        .alt-section { background: #f0f4f8; }
+
+        /* Sobre */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2855 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            margin-bottom: 2.5rem;
+        }
+
+        .about-hero h2 { color: #fff; margin-bottom: 1rem; }
+        .about-hero p { color: rgba(255,255,255,0.92); text-align: left; margin-bottom: 0; }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .mv-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .mv-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-family: var(--heading-font);
+            font-size: 1.3rem;
+        }
+
+        .mv-card p { text-align: left; color: var(--text-muted); margin-bottom: 0; line-height: 1.85; }
+
+        .values-wrap {
+            background: #fff;
+            border-radius: 14px;
+            padding: 2.25rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .values-title {
+            text-align: center;
+            color: var(--primary);
+            font-family: var(--heading-font);
+            font-size: 1.6rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .value-item {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .value-item h4 {
+            color: var(--primary);
+            font-family: var(--heading-font);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.75;
+            text-align: left;
+            font-size: 0.98rem;
+        }
+
+        /* Equipe */
+        .team-card {
+            background: white;
+            padding: 2.25rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+            overflow: hidden;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .team-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            font-size: 1.2rem;
+            font-family: var(--heading-font);
+        }
+
+        .team-card .role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            text-align: justify;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        /* Blog */
         .blog-post {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
             margin-bottom: 2rem;
         }
 
         .blog-post:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
         .blog-header {
             background: var(--primary);
             color: white;
-            padding: 1.5rem;
+            padding: 1.6rem;
         }
 
         .blog-header h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            color: white;
+            font-family: var(--heading-font);
         }
 
-        .blog-meta {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
+        .blog-meta { font-size: 0.9rem; opacity: 0.92; }
 
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-content p {
-            text-align: left;
-            color: var(--text-light);
-        }
+        .blog-content { padding: 1.6rem; }
+        .blog-content p { text-align: left; color: var(--text-muted); }
 
         .read-time {
-            color: var(--secondary);
-            font-size: 0.9rem;
+            color: var(--accent);
+            font-size: 0.92rem;
             margin-top: 1rem;
+            font-weight: 600;
         }
 
-        /* Contact Form */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        /* Form */
+        .form-group { margin-bottom: 1.25rem; }
 
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--primary);
             font-weight: 600;
+            font-family: var(--body-font);
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
+            padding: 0.85rem;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-family: var(--body-font);
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 5px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 0 0 4px rgba(17, 30, 72, 0.12);
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
+        .form-group textarea { resize: vertical; min-height: 150px; }
 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .info-item {
             text-align: center;
+            background: var(--light-bg);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
         }
 
         .info-item h4 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+            font-family: var(--heading-font);
+            font-size: 1.05rem;
         }
+
+        .info-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-item a:hover { text-decoration: underline; }
 
         /* Footer */
         footer {
             background: var(--primary);
             color: white;
-            padding: 2rem;
+            padding: 2.25rem 2rem;
             text-align: center;
             margin-top: 3rem;
         }
 
         footer p {
             color: rgba(255,255,255,0.9);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-bottom: 0;
         }
 
-        /* Alt Sections */
-        .alt-section {
-            background: var(--light-bg);
+        .social-links { margin-top: 1rem; }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.8rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Utilities */
-        .text-center { text-align: center; }
-        .mt-2 { margin-top: 2rem; }
-        .mb-2 { margin-bottom: 2rem; }
+        .social-links a:hover { color: var(--secondary); }
 
         /* Sections Hide/Show */
-        .section-content {
-            display: none;
+        .section-content { display: none; }
+        .section-content.active { display: block; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .metrics { grid-template-columns: repeat(2, 1fr); }
+            .mv-grid { grid-template-columns: 1fr; }
         }
 
-        .section-content.active {
-            display: block;
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: flex; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero p { font-size: 1rem; }
+            section h2 { font-size: 1.9rem; }
+        }
+
+        @media (max-width: 480px) {
+            .metrics { grid-template-columns: 1fr; }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">🏢 Profitto</div>
+            <div class="logo">
+                <img src="PC-Logo.jpg" alt="Profitto Consultoria Contábil" onclick="showSection('home')">
+            </div>
+
             <ul class="nav-links">
                 <li><a onclick="showSection('home')">Home</a></li>
                 <li><a onclick="showSection('servicos')">Serviços</a></li>
                 <li><a onclick="showSection('sobre')">Sobre Nós</a></li>
+                <li><a onclick="showSection('equipe')">Equipe</a></li>
                 <li><a onclick="showSection('blog')">Blog</a></li>
                 <li><a onclick="showSection('contato')">Contato</a></li>
+                <li>
+                    <a href="https://passport.nibo.com.br/Account/Login?ReturnUrl=%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3DD2CBFE38-9803-4DA0-8E2C-4E67F26BA9F5%26redirect_uri%3Dhttps%253a%252f%252fempresa.nibo.com.br%252fAuth%252fCallback%253forigin%253d%2526returnUrl%253d%25252fOrganization%2526redirectEmail%253d"
+                       target="_blank" class="nav-button" rel="noopener">
+                        Área do Cliente
+                    </a>
+                </li>
             </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="mobile-menu" aria-label="Menu mobile">
+                <span></span><span></span><span></span>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Home -->
     <div id="home" class="section-content active">
         <section class="hero">
             <h1>Contabilidade que Faz a Diferença</h1>
-            <p>Soluções contábeis e fiscais completas para sua empresa crescer com segurança</p>
-            <button class="cta-button" onclick="showSection('contato')">Solicite uma Consulta Gratuita</button>
-        </section>
+            <p>Soluções contábeis, fiscais e tributárias completas para sua empresa crescer com segurança e eficiência.</p>
 
-        <!-- Diferenciais -->
-        <section class="container">
-            <h2>Por Que Escolher a Profitto?</h2>
-            <p>Combinamos experiência, tecnologia e dedicação para oferecer o melhor serviço</p>
-            <div class="grid">
-                <div class="card">
-                    <div class="icon">📊</div>
-                    <h3>Expertise Comprovada</h3>
-                    <p>Mais de 15 anos atuando no mercado contábil, com conhecimento profundo em legislação fiscal e planejamento tributário.</p>
+            <div class="cta-row">
+                <button class="cta-button" onclick="showSection('contato')">Solicite uma Consulta</button>
+                <a class="cta-button cta-button-secondary"
+                   href="https://passport.nibo.com.br/Account/Login?ReturnUrl=%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3DD2CBFE38-9803-4DA0-8E2C-4E67F26BA9F5%26redirect_uri%3Dhttps%253a%252f%252fempresa.nibo.com.br%252fAuth%252fCallback%253forigin%253d%2526returnUrl%253d%25252fOrganization%2526redirectEmail%253d"
+                   target="_blank" rel="noopener">
+                    Área do Cliente
+                </a>
+            </div>
+
+            <div class="metrics">
+                <div class="metric">
+                    <h3>50+</h3>
+                    <p>CNPJs abertos</p>
                 </div>
-                <div class="card">
-                    <div class="icon">💻</div>
-                    <h3>Tecnologia Moderna</h3>
-                    <p>Utilizamos softwares de última geração para garantir segurança, eficiência e conformidade com todas as obrigações.</p>
+                <div class="metric">
+                    <h3>200+</h3>
+                    <p>Impostos de renda</p>
                 </div>
-                <div class="card">
-                    <div class="icon">🤝</div>
-                    <h3>Atendimento Personalizado</h3>
-                    <p>Cada cliente é único. Desenvolvemos estratégias sob medida para suas necessidades específicas.</p>
+                <div class="metric">
+                    <h3>4+</h3>
+                    <p>Estados atendidos</p>
+                </div>
+                <div class="metric">
+                    <h3>10+</h3>
+                    <p>Anos de experiência</p>
                 </div>
             </div>
         </section>
 
-        <!-- Depoimentos -->
-        <section class="container alt-section">
-            <h2>O Que Nossos Clientes Dizem</h2>
+        <section class="container">
+            <h2>Por que escolher a Profitto?</h2>
+            <p>Atuação especializada, comunicação clara e acompanhamento próximo para decisões mais seguras.</p>
+
             <div class="grid">
-                <div>
-                    <div class="testimonial">
-                        <p>"A Profitto transformou completamente a gestão contábil da nossa empresa. Economia real em impostos e tranquilidade na auditoria."</p>
-                        <strong>Carlos Silva - CEO, Silva & Cia Ltda</strong>
-                    </div>
+                <div class="card">
+                    <div class="badge">SA</div>
+                    <h3>Especialização em Saúde</h3>
+                    <p>Experiência prática com profissionais e empresas do setor de saúde, com foco em rotinas, riscos e oportunidades do segmento.</p>
                 </div>
-                <div>
-                    <div class="testimonial">
-                        <p>"Profissionais competentes que entendem de verdade o negócio. Recomendo para qualquer empresa que quer crescer com segurança."</p>
-                        <strong>Marina Costa - Diretora, TechStart Solutions</strong>
-                    </div>
+
+                <div class="card">
+                    <div class="badge">CR</div>
+                    <h3>Rigor e Conformidade</h3>
+                    <p>Rotinas contábeis e fiscais executadas com disciplina e segurança, reduzindo riscos e mantendo a empresa em conformidade.</p>
                 </div>
-                <div>
-                    <div class="testimonial">
-                        <p>"O suporte da Profitto foi essencial para nossa empresa passar por auditoria sem problemas. Muito satisfeito!"</p>
-                        <strong>Roberto Mendes - Gerente, Comércio Mendes</strong>
-                    </div>
+
+                <div class="card">
+                    <div class="badge">TR</div>
+                    <h3>Atualização Tributária</h3>
+                    <p>Acompanhamento constante de mudanças e impactos, com orientação objetiva para manter a empresa no melhor caminho.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Serviços Section -->
+    <!-- Serviços -->
     <div id="servicos" class="section-content">
         <section class="container">
-            <h2>Nossos Serviços</h2>
-            <p>Soluções contábeis completas para empresas de todos os tamanhos</p>
+            <h2>Nossos serviços</h2>
+            <p>Soluções contábeis completas e personalizadas para sua operação.</p>
+
             <div class="grid">
                 <div class="card">
-                    <div class="icon">📋</div>
-                    <h3>Contabilidade Geral</h3>
-                    <p>Registro contábil completo, elaboração de demonstrações financeiras, conciliações bancárias e gestão de documentação fiscal.</p>
+                    <div class="badge">AB</div>
+                    <h3>Abertura empresarial</h3>
+                    <p>Legalização da sua empresa perante a Receita Federal e demais órgãos Estaduais e Municipais.</p>
+                    <ul>
+                        <li>Registro e enquadramento adequados</li>
+                        <li>Conformidade documental e cadastral</li>
+                        <li>Acompanhamento em todo o processo</li>
+                    </ul>
                 </div>
+
                 <div class="card">
-                    <div class="icon">💰</div>
-                    <h3>Planejamento Fiscal</h3>
-                    <p>Estratégias tributárias eficientes, análise de regimes fiscais, otimização de pagamentos de impostos e economia legal.</p>
+                    <div class="badge">CC</div>
+                    <h3>Consultoria contábil</h3>
+                    <p>Escrituração contábil mensal orientativa e consultiva, priorizando o entendimento do cliente.</p>
+                    <ul>
+                        <li>Rotina contábil organizada</li>
+                        <li>Relatórios e acompanhamento</li>
+                        <li>Atendimento consultivo</li>
+                    </ul>
                 </div>
+
                 <div class="card">
-                    <div class="icon">🏢</div>
-                    <h3>Consultoria Empresarial</h3>
-                    <p>Diagnóstico financeiro, planejamento estratégico, análise de rentabilidade e sugestões para melhoria operacional.</p>
+                    <div class="badge">CF</div>
+                    <h3>Consultoria fiscal</h3>
+                    <p>Apuração mensal de tributos com foco em manter a conformidade e buscar a elisão fiscal.</p>
+                    <ul>
+                        <li>Apuração e controles mensais</li>
+                        <li>Redução de riscos e inconsistências</li>
+                        <li>Economia legal e previsibilidade</li>
+                    </ul>
                 </div>
+
                 <div class="card">
-                    <div class="icon">📑</div>
-                    <h3>Compliance e Auditoria</h3>
-                    <p>Preparação para auditorias, conformidade regulatória, assessoria em processos fiscais e resoluções com órgãos governamentais.</p>
+                    <div class="badge">DP</div>
+                    <h3>Setor pessoal</h3>
+                    <p>Folha de pagamento, férias e admissões com foco em segurança jurídica para o empregador.</p>
+                    <ul>
+                        <li>Fechamento de folha e rotinas</li>
+                        <li>Conformidade trabalhista</li>
+                        <li>Orientação em admissões e férias</li>
+                    </ul>
                 </div>
+
                 <div class="card">
-                    <div class="icon">💼</div>
-                    <h3>Gestão Contábil</h3>
-                    <p>Consultoria em sistemas de contabilidade, treinamento de equipes, implantação de controles internos e rotinas otimizadas.</p>
+                    <div class="badge">PT</div>
+                    <h3>Planejamento tributário</h3>
+                    <p>Análise contínua para manter sua empresa no melhor regime tributário possível, com atenção às mudanças da reforma tributária.</p>
+                    <ul>
+                        <li>Revisão de regime e cenários</li>
+                        <li>Estratégia e acompanhamento</li>
+                        <li>Otimização tributária recorrente</li>
+                    </ul>
                 </div>
+
                 <div class="card">
-                    <div class="icon">📈</div>
-                    <h3>Análise Financeira</h3>
-                    <p>Relatórios financeiros gerenciais, indicadores de desempenho, fluxo de caixa projetado e tomada de decisão baseada em dados.</p>
+                    <div class="badge">BF</div>
+                    <h3>BPO financeiro</h3>
+                    <p>Terceirização do financeiro: contas a pagar, contas a receber, faturamento e métricas atualizadas para facilitar a operação.</p>
+                    <ul>
+                        <li>Rotina financeira organizada</li>
+                        <li>Métricas e visibilidade</li>
+                        <li>Mais foco no seu negócio</li>
+                    </ul>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Sobre Section -->
+    <!-- Sobre -->
     <div id="sobre" class="section-content">
         <section class="container">
-            <h2>Sobre a Profitto</h2>
-            <p style="text-align: left; margin-top: 2rem;">
-                A Profitto Consultoria Contábil nasceu da convicção de que contabilidade não é apenas cumprimento de obrigações legais, 
-                mas uma ferramenta estratégica para o crescimento dos negócios. Somos uma empresa especializada em oferecer soluções 
-                contábeis, fiscais e financeiras para empresas que desejam prosperar com segurança jurídica e eficiência operacional.
-            </p>
+            <div class="about-hero">
+                <h2>Sobre a Profitto</h2>
+                <p>
+                    A Profitto Consultoria Contábil acredita que contabilidade é direção: clareza para decidir, disciplina para executar e consistência para crescer.
+                    Atuamos com foco em profissionais de saúde em Sergipe, oferecendo suporte contábil, fiscal e financeiro com rigor técnico e linguagem objetiva.
+                </p>
+            </div>
 
-            <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Nossa Missão</h3>
-            <p style="text-align: left;">
-                Ser a consultoria contábil de confiança, oferecendo soluções inovadoras e personalizadas que agregam valor real aos 
-                negócios de nossos clientes.
-            </p>
-
-            <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Nossos Valores</h3>
-            <div class="grid" style="margin-top: 2rem;">
-                <div class="card">
-                    <h3>Ética e Integridade</h3>
-                    <p>Operamos com total conformidade legal e transparência em todas as nossas ações.</p>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <h3>Missão</h3>
+                    <p>Fornecer informações claras, concisas e decisivas para a tomada de decisões dos nossos clientes.</p>
                 </div>
-                <div class="card">
-                    <h3>Excelência</h3>
-                    <p>Buscamos sempre a qualidade máxima nos serviços e no atendimento aos clientes.</p>
-                </div>
-                <div class="card">
-                    <h3>Inovação</h3>
-                    <p>Utilizamos as melhores tecnologias para oferecer soluções modernas e eficientes.</p>
+                <div class="mv-card">
+                    <h3>Visão</h3>
+                    <p>Ser referência na contabilidade para prestadores de serviços em saúde em Sergipe até 2030.</p>
                 </div>
             </div>
 
-            <h3 style="color: var(--primary); margin-top: 3rem; margin-bottom: 1rem;">Equipe</h3>
-            <p style="text-align: left;">
-                Nossa equipe é composta por contadores, consultores e especialistas com ampla experiência no mercado, 
-                dedicados a proporcionar o melhor atendimento e soluções personalizadas para cada cliente.
-            </p>
+            <div class="values-wrap">
+                <div class="values-title">Valores</div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h4>Integridade</h4>
+                        <p>Transparência e responsabilidade em cada decisão e entrega.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Disciplina</h4>
+                        <p>Processos bem executados e rotina organizada para reduzir riscos.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Ética</h4>
+                        <p>Conformidade e conduta profissional como base do relacionamento.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Inclusão</h4>
+                        <p>Atendimento respeitoso e acessível, com comunicação clara.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Modernidade</h4>
+                        <p>Tecnologia aplicada para melhorar processos e a experiência do cliente.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Responsabilidade socioambiental</h4>
+                        <p>Compromisso com práticas sustentáveis e impacto positivo.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
-    <!-- Blog Section -->
+    <!-- Equipe -->
+    <div id="equipe" class="section-content">
+        <section class="container alt-section">
+            <h2>Nossa equipe</h2>
+            <p>Experiência técnica, atuação prática e foco no que move o cliente: decisão.</p>
+
+            <div class="grid">
+                <div class="team-card">
+                    <div class="badge">DF</div>
+                    <h3>Davi Conceição Ferreira</h3>
+                    <div class="role">Contador e Responsável Técnico</div>
+                    <p>
+                        Bacharel em Ciências Contábeis. Contador com registro no Conselho Regional de Contabilidade de Sergipe desde 2017.
+                        Conselheiro do CRC-SE para o quadriênio 2026-2029. Especialista em Contabilidade Pública, Eleitoral e para profissionais de saúde.
+                        Diretor de Planejamento da Prefeitura Municipal de Itaporanga D’Ajuda e mestrando em Economia pela Universidade Federal de Sergipe.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="badge">KF</div>
+                    <h3>Karoline Ferreira</h3>
+                    <div class="role">Advogada (Legalização)</div>
+                    <p>
+                        Responsável pelos processos de legalização e regularização, com atuação voltada à conformidade e ao suporte jurídico para
+                        abertura, alterações e adequações de empresas.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="badge">MA</div>
+                    <h3>Mirelle Almeida</h3>
+                    <div class="role">BPO Financeiro</div>
+                    <p>
+                        Responsável pela gestão financeira terceirizada, garantindo organização de contas a pagar, contas a receber, faturamento e métricas
+                        atualizadas para apoiar o controle e a tomada de decisão do cliente.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog -->
     <div id="blog" class="section-content">
         <section class="container alt-section">
-            <h2>Blog & Notícias</h2>
-            <p>Dicas, análises e notícias sobre contabilidade, fiscalidade e gestão empresarial</p>
-            
-            <div id="blog-posts" style="margin-top: 2rem;">
-                <!-- Blog posts serão inseridos aqui pelo JavaScript -->
-            </div>
+            <h2>Blog & notícias</h2>
+            <p>Dicas e conteúdos sobre contabilidade, tributação e gestão.</p>
+
+            <div id="blog-posts" style="margin-top: 2rem;"></div>
         </section>
     </div>
 
-    <!-- Contato Section -->
+    <!-- Contato -->
     <div id="contato" class="section-content">
         <section class="container">
-            <h2>Entre em Contato</h2>
-            <p>Vamos conversar sobre como podemos ajudar sua empresa</p>
+            <h2>Entre em contato</h2>
+            <p>Vamos conversar sobre como podemos ajudar sua empresa.</p>
 
-            <div style="max-width: 600px; margin: 2rem auto;">
+            <div style="max-width: 640px; margin: 2rem auto;">
                 <form onsubmit="submitForm(event)">
                     <div class="form-group">
-                        <label for="name">Nome Completo</label>
+                        <label for="name">Nome completo</label>
                         <input type="text" id="name" required>
                     </div>
                     <div class="form-group">
@@ -562,7 +860,7 @@
                         <input type="email" id="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Telefone</label>
+                        <label for="phone">Telefone/WhatsApp</label>
                         <input type="tel" id="phone">
                     </div>
                     <div class="form-group">
@@ -577,22 +875,22 @@
                         <label for="message">Mensagem</label>
                         <textarea id="message" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button" style="width: 100%;">Enviar Mensagem</button>
+                    <button type="submit" class="cta-button" style="width: 100%;">Enviar mensagem</button>
                 </form>
             </div>
 
             <div class="contact-info">
                 <div class="info-item">
-                    <h4>📞 Telefone</h4>
-                    <p>(79) 3224-1234</p>
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/5579999664331" target="_blank" rel="noopener">(79) 99966-4331</a>
                 </div>
                 <div class="info-item">
-                    <h4>📧 Email</h4>
-                    <p>contato@profittoconsultoria.com.br</p>
+                    <h4>Email</h4>
+                    <a href="mailto:davi.ferreira@profittoconsultoria.com.br">davi.ferreira@profittoconsultoria.com.br</a>
                 </div>
                 <div class="info-item">
-                    <h4>📍 Endereço</h4>
-                    <p>Aracaju, Sergipe - Brasil</p>
+                    <h4>Local</h4>
+                    <p style="margin-bottom:0;">Aracaju, Sergipe - Brasil</p>
                 </div>
             </div>
         </section>
@@ -601,61 +899,62 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Profitto Consultoria Contábil. Todos os direitos reservados.</p>
-        <p style="margin-top: 1rem; font-size: 0.85rem;">Desenvolvido com ❤️ | Soluções Contábeis Inteligentes</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/sejaprofitto" target="_blank" rel="noopener">Instagram @sejaprofitto</a>
+        </div>
+        <p style="margin-top: 0.9rem; font-size: 0.9rem;">Soluções contábeis inteligentes</p>
     </footer>
 
     <script>
-        // Navegação entre seções
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section-content');
             sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
+            const el = document.getElementById(sectionId);
+            if (el) el.classList.add('active');
             window.scrollTo(0, 0);
         }
 
-        // Artigos do Blog (JSON estruturado para fácil atualização com IA)
         const blogArticles = [
             {
                 title: "5 Dicas Essenciais para Planejamento Fiscal em 2026",
-                date: "07/02/2026",
+                date: "08/02/2026",
                 category: "Planejamento Fiscal",
-                content: "Comece o ano certo! Saiba quais são as 5 principais estratégias fiscais que toda empresa deve considerar para 2026. Desde a escolha do regime tributário até a otimização de deduções...",
+                content: "Comece o ano certo: estratégias para revisar regime, organizar rotinas e reduzir riscos com economia legal.",
                 readTime: "5 min"
             },
             {
-                title: "Mudanças na Legislação Fiscal - Fevereiro 2026",
-                date: "06/02/2026",
+                title: "Reforma Tributária: como se preparar",
+                date: "07/02/2026",
                 category: "Legislação",
-                content: "Conheça as principais mudanças nas leis fiscais que entram em vigor este mês. Atualizações importantes que afetam empresas de todos os segmentos. Fique atualizado e evite multas...",
+                content: "Pontos de atenção e boas práticas para acompanhar mudanças e manter previsibilidade financeira.",
                 readTime: "7 min"
             },
             {
-                title: "Como Preparar Sua Empresa para Auditoria",
-                date: "05/02/2026",
-                category: "Auditoria",
-                content: "Dicas práticas para deixar sua empresa pronta para uma auditoria fiscal ou financeira. Documentação, organização de arquivos, e principais pontos de atenção que auditores costumam verificar...",
+                title: "BPO Financeiro: rotina e indicadores",
+                date: "06/02/2026",
+                category: "Gestão Financeira",
+                content: "Como ganhar tempo, melhorar o controle e tomar decisões com dados mais confiáveis.",
                 readTime: "6 min"
             }
         ];
 
-        // Renderizar artigos do blog
         function renderBlogPosts() {
             const blogContainer = document.getElementById('blog-posts');
+            if (!blogContainer) return;
             blogContainer.innerHTML = '';
-            
+
             blogArticles.forEach(article => {
                 const postHTML = `
                     <div class="blog-post">
                         <div class="blog-header">
                             <h3>${article.title}</h3>
                             <div class="blog-meta">
-                                <span>📅 ${article.date}</span> | 
-                                <span>🏷️ ${article.category}</span>
+                                <span>${article.date}</span> | <span>${article.category}</span>
                             </div>
                         </div>
                         <div class="blog-content">
                             <p>${article.content}</p>
-                            <div class="read-time">⏱️ Tempo de leitura: ${article.readTime}</div>
+                            <div class="read-time">Tempo de leitura: ${article.readTime}</div>
                         </div>
                     </div>
                 `;
@@ -663,9 +962,9 @@
             });
         }
 
-        // Formulário de contato
         function submitForm(event) {
             event.preventDefault();
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
@@ -673,32 +972,22 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Abrir cliente de email padrão
-            const mailtoLink = `mailto:contato@profittoconsultoria.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nome: ${name}\\nEmail: ${email}\\nTelefone: ${phone}\\nEmpresa: ${company}\\n\\nMensagem:\\n${message}`)}`;
-            window.location.href = mailtoLink;
+            const whatsappMessage =
+                `Olá! Meu nome é ${name}. Estou entrando em contato através do site da Profitto.` +
+                `\nEmail: ${email}` +
+                `\nTelefone: ${phone}` +
+                `\nEmpresa: ${company}` +
+                `\nAssunto: ${subject}` +
+                `\n\nMensagem:\n${message}`;
 
-            // Limpar formulário
+            const whatsappUrl = `https://wa.me/5579999664331?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+
             document.querySelector('form').reset();
-            alert('Enviando seu contato via email...');
+            alert('Abrindo WhatsApp para continuar a conversa...');
         }
 
-        // Inicializar blog ao carregar página
         document.addEventListener('DOMContentLoaded', renderBlogPosts);
-
-        // API para adicionar artigos (para integração com IA)
-        function addBlogArticle(article) {
-            blogArticles.unshift(article); // Adiciona no início
-            renderBlogPosts();
-        }
-
-        // Exemplo de como usar a API com IA:
-        // addBlogArticle({
-        //     title: "Novo Artigo",
-        //     date: "08/02/2026",
-        //     category: "Categoria",
-        //     content: "Conteúdo gerado por IA...",
-        //     readTime: "5 min"
-        // });
     </script>
 </body>
 </html>
