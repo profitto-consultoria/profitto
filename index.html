@@ -1,4 +1,4 @@
-<index html>
+<Index html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -285,7 +285,7 @@
 
         .card li { margin-bottom: 0.4rem; }
 
-        /* Ícones sem emojis */
+        /* Badges iniciais (sem emojis) */
         .badge {
             display: inline-flex;
             align-items: center;
@@ -357,8 +357,10 @@
 
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .value-item {
@@ -535,6 +537,13 @@
             margin-bottom: 0;
         }
 
+        .footer-symbol {
+            height: 40px;
+            width: auto;
+            margin-bottom: 0.9rem;
+            opacity: 0.9;
+        }
+
         .social-links { margin-top: 1rem; }
 
         .social-links a {
@@ -556,6 +565,7 @@
         @media (max-width: 992px) {
             .metrics { grid-template-columns: repeat(2, 1fr); }
             .mv-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 700px; }
         }
 
         @media (max-width: 768px) {
@@ -564,6 +574,7 @@
             .hero h1 { font-size: 2.1rem; }
             .hero p { font-size: 1rem; }
             section h2 { font-size: 1.9rem; }
+            .values-grid { grid-template-columns: 1fr; max-width: 420px; }
         }
 
         @media (max-width: 480px) {
@@ -577,7 +588,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="PC-Logo.jpg" alt="Profitto Consultoria Contábil" onclick="showSection('home')">
+                <img src="./PC-Logo.jpg" alt="Profitto Consultoria Contábil" onclick="showSection('home')">
             </div>
 
             <ul class="nav-links">
@@ -642,19 +653,19 @@
 
             <div class="grid">
                 <div class="card">
-                    <div class="badge">SA</div>
+                    <div class="badge">ES</div>
                     <h3>Especialização em Saúde</h3>
                     <p>Experiência prática com profissionais e empresas do setor de saúde, com foco em rotinas, riscos e oportunidades do segmento.</p>
                 </div>
 
                 <div class="card">
-                    <div class="badge">CR</div>
+                    <div class="badge">RC</div>
                     <h3>Rigor e Conformidade</h3>
                     <p>Rotinas contábeis e fiscais executadas com disciplina e segurança, reduzindo riscos e mantendo a empresa em conformidade.</p>
                 </div>
 
                 <div class="card">
-                    <div class="badge">TR</div>
+                    <div class="badge">AT</div>
                     <h3>Atualização Tributária</h3>
                     <p>Acompanhamento constante de mudanças e impactos, com orientação objetiva para manter a empresa no melhor caminho.</p>
                 </div>
@@ -898,6 +909,7 @@
 
     <!-- Footer -->
     <footer>
+        <img src="./PC-Simbolo.jpg" alt="Símbolo Profitto" class="footer-symbol">
         <p>&copy; 2026 Profitto Consultoria Contábil. Todos os direitos reservados.</p>
         <div class="social-links">
             <a href="https://www.instagram.com/sejaprofitto" target="_blank" rel="noopener">Instagram @sejaprofitto</a>
