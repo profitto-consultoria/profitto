@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profitto Consultoria Contábil - Soluções em contabilidade, planejamento fiscal e consultoria empresarial">
+    <meta name="keywords" content="contabilidade, consultoria fiscal, contabilidade empresarial, planejamento fiscal">
+    <title>Profitto Consultoria Contábil | Seus Experts em Contabilidade</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Cores Profissionais */
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --light-bg: #f9fafb;
+            --text: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        /* Header/Navbar */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        section p {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            text-align: left;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-left: 4px solid var(--secondary);
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .testimonial strong {
+            display: block;
+            color: var(--primary);
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        /* Blog Posts */
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .blog-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .blog-header h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content p {
+            text-align: left;
+            color: var(--text-light);
+        }
+
+        .read-time {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(30, 58, 138, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        /* Alt Sections */
+        .alt-section {
+            background: var(--light-bg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 2rem; }
+
+        /* Sections Hide/Show */
+        .section-content {
+            display: none;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🏢 Profitto</div>
+            <ul class="nav-links">
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('servicos')">Serviços</a></li>
+                <li><a onclick="showSection('sobre')">Sobre Nós</a></li>
+                <li><a onclick="showSection('blog')">Blog</a></li>
+                <li><a onclick="showSection('contato')">Contato</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div id="home" class="section-content active">
+        <section class="hero">
+            <h1>Contabilidade que Faz a Diferença</h1>
+            <p>Soluções contábeis e fiscais completas para sua empresa crescer com segurança</p>
+            <button class="cta-button" onclick="showSection('contato')">Solicite uma Consulta Gratuita</button>
+        </section>
+
+        <!-- Diferenciais -->
+        <section class="container">
+            <h2>Por Que Escolher a Profitto?</h2>
+            <p>Combinamos experiência, tecnologia e dedicação para oferecer o melhor serviço</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">📊</div>
+                    <h3>Expertise Comprovada</h3>
+                    <p>Mais de 15 anos atuando no mercado contábil, com conhecimento profundo em legislação fiscal e planejamento tributário.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💻</div>
+                    <h3>Tecnologia Moderna</h3>
+                    <p>Utilizamos softwares de última geração para garantir segurança, eficiência e conformidade com todas as obrigações.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🤝</div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Cada cliente é único. Desenvolvemos estratégias sob medida para suas necessidades específicas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos -->
+        <section class="container alt-section">
+            <h2>O Que Nossos Clientes Dizem</h2>
+            <div class="grid">
+                <div>
+                    <div class="testimonial">
+                        <p>"A Profitto transformou completamente a gestão contábil da nossa empresa. Economia real em impostos e tranquilidade na auditoria."</p>
+                        <strong>Carlos Silva - CEO, Silva & Cia Ltda</strong>
+                    </div>
+                </div>
+                <div>
+                    <div class="testimonial">
+                        <p>"Profissionais competentes que entendem de verdade o negócio. Recomendo para qualquer empresa que quer crescer com segurança."</p>
+                        <strong>Marina Costa - Diretora, TechStart Solutions</strong>
+                    </div>
+                </div>
+                <div>
+                    <div class="testimonial">
+                        <p>"O suporte da Profitto foi essencial para nossa empresa passar por auditoria sem problemas. Muito satisfeito!"</p>
+                        <strong>Roberto Mendes - Gerente, Comércio Mendes</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Serviços Section -->
+    <div id="servicos" class="section-content">
+        <section class="container">
+            <h2>Nossos Serviços</h2>
+            <p>Soluções contábeis completas para empresas de todos os tamanhos</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">📋</div>
+                    <h3>Contabilidade Geral</h3>
+                    <p>Registro contábil completo, elaboração de demonstrações financeiras, conciliações bancárias e gestão de documentação fiscal.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💰</div>
+                    <h3>Planejamento Fiscal</h3>
+                    <p>Estratégias tributárias eficientes, análise de regimes fiscais, otimização de pagamentos de impostos e economia legal.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏢</div>
+                    <h3>Consultoria Empresarial</h3>
+                    <p>Diagnóstico financeiro, planejamento estratégico, análise de rentabilidade e sugestões para melhoria operacional.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📑</div>
+                    <h3>Compliance e Auditoria</h3>
+                    <p>Preparação para auditorias, conformidade regulatória, assessoria em processos fiscais e resoluções com órgãos governamentais.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💼</div>
+                    <h3>Gestão Contábil</h3>
+                    <p>Consultoria em sistemas de contabilidade, treinamento de equipes, implantação de controles internos e rotinas otimizadas.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📈</div>
+                    <h3>Análise Financeira</h3>
+                    <p>Relatórios financeiros gerenciais, indicadores de desempenho, fluxo de caixa projetado e tomada de decisão baseada em dados.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sobre Section -->
+    <div id="sobre" class="section-content">
+        <section class="container">
+            <h2>Sobre a Profitto</h2>
+            <p style="text-align: left; margin-top: 2rem;">
+                A Profitto Consultoria Contábil nasceu da convicção de que contabilidade não é apenas cumprimento de obrigações legais, 
+                mas uma ferramenta estratégica para o crescimento dos negócios. Somos uma empresa especializada em oferecer soluções 
+                contábeis, fiscais e financeiras para empresas que desejam prosperar com segurança jurídica e eficiência operacional.
+            </p>
+
+            <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Nossa Missão</h3>
+            <p style="text-align: left;">
+                Ser a consultoria contábil de confiança, oferecendo soluções inovadoras e personalizadas que agregam valor real aos 
+                negócios de nossos clientes.
+            </p>
+
+            <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">Nossos Valores</h3>
+            <div class="grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>Ética e Integridade</h3>
+                    <p>Operamos com total conformidade legal e transparência em todas as nossas ações.</p>
+                </div>
+                <div class="card">
+                    <h3>Excelência</h3>
+                    <p>Buscamos sempre a qualidade máxima nos serviços e no atendimento aos clientes.</p>
+                </div>
+                <div class="card">
+                    <h3>Inovação</h3>
+                    <p>Utilizamos as melhores tecnologias para oferecer soluções modernas e eficientes.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary); margin-top: 3rem; margin-bottom: 1rem;">Equipe</h3>
+            <p style="text-align: left;">
+                Nossa equipe é composta por contadores, consultores e especialistas com ampla experiência no mercado, 
+                dedicados a proporcionar o melhor atendimento e soluções personalizadas para cada cliente.
+            </p>
+        </section>
+    </div>
+
+    <!-- Blog Section -->
+    <div id="blog" class="section-content">
+        <section class="container alt-section">
+            <h2>Blog & Notícias</h2>
+            <p>Dicas, análises e notícias sobre contabilidade, fiscalidade e gestão empresarial</p>
+            
+            <div id="blog-posts" style="margin-top: 2rem;">
+                <!-- Blog posts serão inseridos aqui pelo JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Contato Section -->
+    <div id="contato" class="section-content">
+        <section class="container">
+            <h2>Entre em Contato</h2>
+            <p>Vamos conversar sobre como podemos ajudar sua empresa</p>
+
+            <div style="max-width: 600px; margin: 2rem auto;">
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Enviar Mensagem</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <h4>📞 Telefone</h4>
+                    <p>(79) 3224-1234</p>
+                </div>
+                <div class="info-item">
+                    <h4>📧 Email</h4>
+                    <p>contato@profittoconsultoria.com.br</p>
+                </div>
+                <div class="info-item">
+                    <h4>📍 Endereço</h4>
+                    <p>Aracaju, Sergipe - Brasil</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Profitto Consultoria Contábil. Todos os direitos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Desenvolvido com ❤️ | Soluções Contábeis Inteligentes</p>
+    </footer>
+
+    <script>
+        // Navegação entre seções
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Artigos do Blog (JSON estruturado para fácil atualização com IA)
+        const blogArticles = [
+            {
+                title: "5 Dicas Essenciais para Planejamento Fiscal em 2026",
+                date: "07/02/2026",
+                category: "Planejamento Fiscal",
+                content: "Comece o ano certo! Saiba quais são as 5 principais estratégias fiscais que toda empresa deve considerar para 2026. Desde a escolha do regime tributário até a otimização de deduções...",
+                readTime: "5 min"
+            },
+            {
+                title: "Mudanças na Legislação Fiscal - Fevereiro 2026",
+                date: "06/02/2026",
+                category: "Legislação",
+                content: "Conheça as principais mudanças nas leis fiscais que entram em vigor este mês. Atualizações importantes que afetam empresas de todos os segmentos. Fique atualizado e evite multas...",
+                readTime: "7 min"
+            },
+            {
+                title: "Como Preparar Sua Empresa para Auditoria",
+                date: "05/02/2026",
+                category: "Auditoria",
+                content: "Dicas práticas para deixar sua empresa pronta para uma auditoria fiscal ou financeira. Documentação, organização de arquivos, e principais pontos de atenção que auditores costumam verificar...",
+                readTime: "6 min"
+            }
+        ];
+
+        // Renderizar artigos do blog
+        function renderBlogPosts() {
+            const blogContainer = document.getElementById('blog-posts');
+            blogContainer.innerHTML = '';
+            
+            blogArticles.forEach(article => {
+                const postHTML = `
+                    <div class="blog-post">
+                        <div class="blog-header">
+                            <h3>${article.title}</h3>
+                            <div class="blog-meta">
+                                <span>📅 ${article.date}</span> | 
+                                <span>🏷️ ${article.category}</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <p>${article.content}</p>
+                            <div class="read-time">⏱️ Tempo de leitura: ${article.readTime}</div>
+                        </div>
+                    </div>
+                `;
+                blogContainer.innerHTML += postHTML;
+            });
+        }
+
+        // Formulário de contato
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const company = document.getElementById('company').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Abrir cliente de email padrão
+            const mailtoLink = `mailto:contato@profittoconsultoria.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nome: ${name}\\nEmail: ${email}\\nTelefone: ${phone}\\nEmpresa: ${company}\\n\\nMensagem:\\n${message}`)}`;
+            window.location.href = mailtoLink;
+
+            // Limpar formulário
+            document.querySelector('form').reset();
+            alert('Enviando seu contato via email...');
+        }
+
+        // Inicializar blog ao carregar página
+        document.addEventListener('DOMContentLoaded', renderBlogPosts);
+
+        // API para adicionar artigos (para integração com IA)
+        function addBlogArticle(article) {
+            blogArticles.unshift(article); // Adiciona no início
+            renderBlogPosts();
+        }
+
+        // Exemplo de como usar a API com IA:
+        // addBlogArticle({
+        //     title: "Novo Artigo",
+        //     date: "08/02/2026",
+        //     category: "Categoria",
+        //     content: "Conteúdo gerado por IA...",
+        //     readTime: "5 min"
+        // });
+    </script>
+</body>
+</html>
